@@ -1,14 +1,21 @@
-import express, { Application, Request, Response } from 'express'
-const app: Application = express()
-import cors from "cors"
-const port = 3000
+import express, { Application, Request, Response } from "express";
+const app: Application = express();
+import cors from "cors";
+import { studentRoutes } from "./app/modules/student/student.route";
 
 //parser
-app.use(express.json())
-app.use(cors())
+app.use(express.json());
+app.use(cors());
 
-app.get('/', (req: Request, res: Response) => {
-  res.send('Hello World!')
-})
+// application routes
+app.use('/api/v1/students', studentRoutes );
 
- export default app;
+
+
+const getAController = (req: Request, res: Response) => {
+  res.send("Hello devloper............................!");
+};
+
+app.get("/", getAController);
+
+export default app;

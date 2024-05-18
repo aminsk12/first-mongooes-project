@@ -1,4 +1,3 @@
-import { Schema, model, connect } from "mongoose";
 
 export type UserName = {
   firstName: string;
@@ -22,7 +21,7 @@ export type Guardian = {
   motherContactNo: string;
 };
 
-export type Sudent = {
+export type Student = {
   id: string;
   name: UserName;
   gender: "male" | "female";
