@@ -1,11 +1,4 @@
-import { studentModal } from "../student.model";
-import { Student } from "./student.interface";
-
-const createStudentIntoDB = async (student: Student) => {
-  const result = await studentModal.create(student);
-
-  return result;
-};
+import { studentModal } from "./student.model";
 
 const gateAllStudentIntoDB = async () => {
   const result = await studentModal.find();
@@ -20,7 +13,6 @@ const gateSingelStudentIntoDB = async (id: string) => {
 };
 
 export const studentServices = {
-  createStudentIntoDB,
   gateAllStudentIntoDB,
   gateSingelStudentIntoDB,
 };
